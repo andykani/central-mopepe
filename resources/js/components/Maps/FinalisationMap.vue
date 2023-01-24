@@ -26,6 +26,7 @@ import HasNotMap from './HasNotMap.vue';
 
         async initReservation(){
             try {
+                console.log('init')
                 const response = await axios.post(`${location.origin}/auth/user`)
 
                 if(!response.data.check){
