@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.reservation-container{
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    column-gap: 1rem;
+    background-color: white;
+    padding: 2rem;
+}
+
+.container-form{
+    padding: 1rem;
+}
+
+.reservation-section-container{
+    display: grid;
+}
+
+.leaflet-control-attribution{
+    display: none;
+}
+.leaflet-routing-alternatives-container,
+.leaflet-routing-container{
+    display: none;
+}

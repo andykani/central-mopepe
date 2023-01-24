@@ -2,7 +2,7 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ route('login') }}" class="py-3">
         @csrf
 
         <!-- Email Address -->
@@ -32,7 +32,7 @@
             </label>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
+        <div class="flex items-center justify-between mt-4">
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
                     {{ __('Mot de passe oublié?') }}
@@ -42,6 +42,28 @@
             <x-primary-button class="ml-3">
                 {{ __('Connexion') }}
             </x-primary-button>
+
+             
         </div>
     </form>
+    <div class="container text-center">
+        <h5 class="pt-5">
+            <a href="{{route('register')}}" class="hover:text-blue-700"> vous n'avez pas de compte?</a>
+        </h5>
+    </div>
+    <div class="flex md:justify-between justify-center items-center mt-10">
+        <div style="height: 1px;" class="bg-gray-300 md:block hidden w-4/12"></div>
+        <p class="md:mx-2 text-sm font-light text-gray-400"> Se connecter avec</p> 
+        <div style="height: 1px;" class="bg-gray-300 md:block hidden w-4/12"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-2 mt-7">
+        <div>
+            <button class="text-center w-full text-white bg-blue-900 p-3 duration-300 rounded-sm hover:bg-blue-700">Facebook</button>
+        </div>
+        <div>
+            <button class="text-center w-full text-white bg-blue-400 p-3 duration-300 rounded-sm hover:bg-blue-500">Twitter</button>
+        </div>
+    </div>
+
 </x-guest-layout>
